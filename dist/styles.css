@@ -1,0 +1,155 @@
+.superflow-container {
+    display: flex;
+    font-family: Arial, sans-serif;
+    max-width: 100%;
+    flex-direction: column;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.superflow-project-card {
+    background-color: #fff !important;
+    padding: 24px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.superflow-project-header {
+    border-bottom: 1px solid #E5E7EB;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.superflow-logo {
+    align-self: flex-start;
+}
+
+.superflow-logo svg {
+    width: 200px;  /* Adjust this as needed */
+    height: auto;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.superflow-project-header h2 {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.superflow-status-label {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px; /* 184.615% */
+}
+.superflow-status-label.warning-label {
+    color: #353945;
+}
+
+.superflow-status-label.success-label {
+    color: green;
+}
+
+.superflow-project-card p {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: #777E90;
+}
+
+.superflow-connect-btn {
+    background-color: #625DF5;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.superflow-connect-btn:hover {
+    background-color: #357ab7;
+}
+.superflow-connect-btn:disabled {
+    cursor: not-allowed;
+}
+
+.superflow-manage-setting-btn {
+    background-color: #625DF5;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.superflow-disconnect-btn {
+    background-color: grey;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+
+.superflow-container .installation-info, .superflow-container .installation-success-info {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    color: #303034;
+}
+
+
+.superflow-connect-btn[disabled="disabled"] {
+    color: transparent; /* Hide the button text */
+    position: relative; /* Required for the pseudo-element positioning */
+}
+
+.superflow-connect-btn[disabled="disabled"]:before {
+    content: 'Installing...';
+    display: inline-block;
+    margin-right: 10px;
+    animation: loadingDots 2s infinite;
+    position: absolute; /* Absolute positioning */
+    left: 30%; /* Center the dots */
+    transform: translateX(0%); /* Adjust for exact centering */
+    color: #ffffff; /* Set the color back to the original text color */
+}
+
+@keyframes loadingDots {
+    0% { content: 'Installing.'; }
+    33% { content: 'Installing..'; }
+    66% { content: 'Installing...'; }
+}
+
+
+.superflow-disconnect-btn[disabled="disabled"] {
+    color: transparent; /* Hide the button text */
+    position: relative; /* Required for the pseudo-element positioning */
+}
+
+.superflow-disconnect-btn[disabled="disabled"]:before {
+    content: 'Disconnecting...';
+    display: inline-block;
+    margin-right: 10px;
+    animation: disconnectLoadingDots 2s infinite;
+    position: absolute; /* Absolute positioning */
+    left: 30%; /* Center the dots */
+    transform: translateX(0%); /* Adjust for exact centering */
+    color: #ffffff; /* Set the color back to the original text color */
+}
+
+@keyframes disconnectLoadingDots {
+    0% { content: 'Disconnecting.'; }
+    33% { content: 'Disconnecting..'; }
+    66% { content: 'Disconnecting...'; }
+}
